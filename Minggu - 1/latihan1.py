@@ -1,0 +1,5 @@
+print("===============================")
+print("Nama: M Hafiidh Basri")
+print("Kelas: 19.1A.09")
+print("Jurusan: Sistem Informasi")
+print("===============================")
