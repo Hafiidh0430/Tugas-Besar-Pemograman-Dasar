@@ -33,15 +33,13 @@ for jabatan in data_jabatan:
     if golongan_jabatan == jabatan["golongan"]:
         # hitung tunjangan jabatan
         tunjangan_jabatan = kontrak_karyawan * jabatan["tunjangan"]
-        break
 
 # loop untuk mencari data pendidiakn
 for pendidikan in data_pendidikan:
     # mencari data yang sesuai dengan input pendidikan
     if golongan_pendidikan.lower() == pendidikan["pendidikan"].lower():
         # hitung tunjangan pendidikan
-        tunjangan_pendidikan = kontrak_karyawan * pendidikan["persentase"]
-        break   
+        tunjangan_pendidikan = kontrak_karyawan * pendidikan["persentase"]   
 
 # hitung total lenbur jika melebihi jam kerja (8 jam)
 if jumlah_jam_kerja > jam_kerja:
