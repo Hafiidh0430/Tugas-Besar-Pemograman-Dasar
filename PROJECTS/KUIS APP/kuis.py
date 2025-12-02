@@ -14,7 +14,7 @@ kuis = [
         "jawaban_benar": "b",
         "jawaban": "",
         "poin": 10,
-        "kategori_soal": "Logika Algoritma"
+        "kategori_soal": "LGA"
     },
     {
         "soal": "Simbol flowchart yang digunakan untuk MULAI dan SELESAI adalah...",
@@ -27,7 +27,7 @@ kuis = [
         "jawaban_benar": "c",
         "jawaban": "",
         "poin": 10,
-        "kategori_soal": "Logika Algoritma"
+        "kategori_soal": "LGA"
     },
     {
         "soal": "Tipe data untuk menyimpan angka desimal adalah...",
@@ -40,7 +40,7 @@ kuis = [
         "jawaban_benar": "c",
         "jawaban": "",
         "poin": 10,
-        "kategori_soal": "Logika Algoritma"
+        "kategori_soal": "LGA"
     },
     {
         "soal": "Operator yang digunakan untuk pembagian sisa (modulus) di Python adalah...",
@@ -53,7 +53,7 @@ kuis = [
         "jawaban_benar": "c",
         "jawaban": "",
         "poin": 10,
-        "kategori_soal": "Logika Algoritma"
+        "kategori_soal": "LGA"
     },
     {
         "soal": "Apa fungsi dari perintah input() di Python?",
@@ -66,7 +66,7 @@ kuis = [
         "jawaban_benar": "c",
         "jawaban": "",
         "poin": 10,
-        "kategori_soal": "Logika Algoritma"
+        "kategori_soal": "LGA"
     },
     {
         "soal": "Struktur percabangan di Python menggunakan kata kunci...",
@@ -79,7 +79,7 @@ kuis = [
         "jawaban_benar": "c",
         "jawaban": "",
         "poin": 10,
-        "kategori_soal": "Dasar Pemrograman"
+        "kategori_soal": "DSP"
     },
     {
         "soal": "Perulangan yang digunakan saat jumlah perulangan sudah diketahui adalah...",
@@ -92,7 +92,7 @@ kuis = [
         "jawaban_benar": "c",
         "jawaban": "",
         "poin": 10,
-        "kategori_soal": "Dasar Pemrograman"
+        "kategori_soal": "DSP"
     },
     {
         "soal": "Fungsi dari keyword def pada Python adalah untuk...",
@@ -105,7 +105,7 @@ kuis = [
         "jawaban_benar": "b",
         "jawaban": "",
         "poin": 10,
-        "kategori_soal": "Dasar Pemrograman"
+        "kategori_soal": "DSP"
     },
     {
         "soal": "Struktur data yang dapat menyimpan banyak data dalam satu variabel di Python adalah...",
@@ -118,10 +118,9 @@ kuis = [
         "jawaban_benar": "c",
         "jawaban": "",
         "poin": 10,
-        "kategori_soal": "Dasar Pemrograman"
+        "kategori_soal": "DSP"
     },
     {
-    
         "soal": "Apa output dari kode berikut?\nprint(2 ** 3)",
         "pilihan_jawaban": {
             "a": "5",
@@ -132,7 +131,7 @@ kuis = [
         "jawaban_benar": "c",
         "jawaban": "",
         "poin": 10,
-        "kategori_soal": "Dasar Pemrograman"
+        "kategori_soal": "DSP"
     }
 ]
 
@@ -177,12 +176,11 @@ def tampilkan_hasil(kuis_berdasarkan_kategori, skor_total):
         # jika jawaban kamu sama dengan jawaban benar pada soal, maka ganti ikon
         ikon = "✅" if jawaban_kamu == jawaban_benar else "❌"
         # tampilkan hasil per soal dengan jawaban
-        print(f"{ikon} Soal: {no_soal}. {soal['soal']}")
+        print(f"{ikon} {no_soal}. {soal['soal']}")
         print(f"=> Jawaban kamu  : {jawaban_kamu}")
         print(f"=> Jawaban benar : {jawaban_benar}")
         print(f"=> Poin          : {poin if ikon == '✅' else 0}/{poin}")
         print("-" * 60)
-
     # hitung dan tampilkan total maksimal dari seluruh poin
     total_maksimal = sum(soal["poin"] for soal in kuis_berdasarkan_kategori)
     print(f"\nSkor Akhir: {skor_total} / {total_maksimal} poin")
@@ -190,19 +188,18 @@ def tampilkan_hasil(kuis_berdasarkan_kategori, skor_total):
     persentase = (skor_total / total_maksimal) * 100
     grades = ["F", "F", "F", "F", "E", "D", "C", "B", "A", "A", "A"]
     grade = grades[min(int(persentase // 10), 10)]
-    
     print(f"Persentase benar: {persentase:.1f}% ({grade})")
     tampilkan_tanggal()
     print("=" * 60)
 
 # fungsi utama untuk menjalankan kuis
 def main():
-    # mulai kuis
-    print(f"\nTerdapat {len(kuis_berdasarkan_kategori)} soal. Selamat Mengerjakan!\n")
     # loop untuk memfilter soal berdasarkan kategori
     for soal in kuis:
         if soal["kategori_soal"].lower() == kategori_soal.lower():
             kuis_berdasarkan_kategori.append(soal)
+    # mulai kuis
+    print(f"\nTerdapat {len(kuis_berdasarkan_kategori)} soal. Selamat Mengerjakan!\n")
     # loop soal kuis yg sudah di filter berdasarkan kategori dan kita random urutannya 
     random.shuffle(kuis_berdasarkan_kategori)
     for no_soal, soal in enumerate(kuis_berdasarkan_kategori, start=1):
@@ -230,10 +227,9 @@ while True:
     # variabel input nama, nim, dan kategori soal
     nama = input("Masukkan Nama Lengkap: ")
     nim = input("Masukkan NIM: ")
-    kategori_soal = input("Masukkan Kategori Soal [Dasar Pemrograman/Logika Algoritma]: ")
-    
+    kategori_soal = input("Masukkan Kategori Soal [DSP/LGA]: ")
     # validasi input nama dan nim tidak boleh kosong
-    if kategori_soal.lower() not in ["dasar pemrograman", "logika algoritma"]:
+    if kategori_soal.lower() not in ["dsp", "lga"]:
         print("❗ Kategori soal tidak valid! Pilih kategori yang tersedia.\n")
     # jika kategori soal tidak sesuai, tampilkan pesan kesalahan
     elif nama.strip() ==  "" or nim == "" or kategori_soal.strip() == "":
