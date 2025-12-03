@@ -1,139 +1,10 @@
 from datetime import datetime
 import random
+import json
 
 # soal kuis 
-kuis = [
-    {
-        "soal": "Apa yang dimaksud dengan algoritma?",
-        "pilihan_jawaban": {
-            "a": "Bahasa pemrograman",
-            "b": "Langkah-langkah logis untuk menyelesaikan masalah",
-            "c": "Aplikasi komputer",
-            "d": "Sistem operasi"
-        },
-        "jawaban_benar": "b",
-        "jawaban": "",
-        "poin": 10,
-        "kategori_soal": "LGA"
-    },
-    {
-        "soal": "Simbol flowchart yang digunakan untuk MULAI dan SELESAI adalah...",
-        "pilihan_jawaban": {
-            "a": "Persegi panjang",
-            "b": "Jajar genjang",
-            "c": "Oval",
-            "d": "Belah ketupat"
-        },
-        "jawaban_benar": "c",
-        "jawaban": "",
-        "poin": 10,
-        "kategori_soal": "LGA"
-    },
-    {
-        "soal": "Tipe data untuk menyimpan angka desimal adalah...",
-        "pilihan_jawaban": {
-            "a": "int",
-            "b": "str",
-            "c": "float",
-            "d": "bool"
-        },
-        "jawaban_benar": "c",
-        "jawaban": "",
-        "poin": 10,
-        "kategori_soal": "LGA"
-    },
-    {
-        "soal": "Operator yang digunakan untuk pembagian sisa (modulus) di Python adalah...",
-        "pilihan_jawaban": {
-            "a": "/",
-            "b": "//",
-            "c": "%",
-            "d": "**"
-        },
-        "jawaban_benar": "c",
-        "jawaban": "",
-        "poin": 10,
-        "kategori_soal": "LGA"
-    },
-    {
-        "soal": "Apa fungsi dari perintah input() di Python?",
-        "pilihan_jawaban": {
-            "a": "Menampilkan output ke layar",
-            "b": "Mengambil data dari database",
-            "c": "Menerima input dari pengguna",
-            "d": "Menghapus data"
-        },
-        "jawaban_benar": "c",
-        "jawaban": "",
-        "poin": 10,
-        "kategori_soal": "LGA"
-    },
-    {
-        "soal": "Struktur percabangan di Python menggunakan kata kunci...",
-        "pilihan_jawaban": {
-            "a": "for",
-            "b": "while",
-            "c": "if",
-            "d": "def"
-        },
-        "jawaban_benar": "c",
-        "jawaban": "",
-        "poin": 10,
-        "kategori_soal": "DSP"
-    },
-    {
-        "soal": "Perulangan yang digunakan saat jumlah perulangan sudah diketahui adalah...",
-        "pilihan_jawaban": {
-            "a": "if",
-            "b": "while",
-            "c": "for",
-            "d": "def"
-        },
-        "jawaban_benar": "c",
-        "jawaban": "",
-        "poin": 10,
-        "kategori_soal": "DSP"
-    },
-    {
-        "soal": "Fungsi dari keyword def pada Python adalah untuk...",
-        "pilihan_jawaban": {
-            "a": "Mendeklarasikan variabel",
-            "b": "Mendefinisikan fungsi",
-            "c": "Membuat perulangan",
-            "d": "Menjalankan program"
-        },
-        "jawaban_benar": "b",
-        "jawaban": "",
-        "poin": 10,
-        "kategori_soal": "DSP"
-    },
-    {
-        "soal": "Struktur data yang dapat menyimpan banyak data dalam satu variabel di Python adalah...",
-        "pilihan_jawaban": {
-            "a": "int",
-            "b": "float",
-            "c": "list",
-            "d": "bool"
-        },
-        "jawaban_benar": "c",
-        "jawaban": "",
-        "poin": 10,
-        "kategori_soal": "DSP"
-    },
-    {
-        "soal": "Apa output dari kode berikut?\nprint(2 ** 3)",
-        "pilihan_jawaban": {
-            "a": "5",
-            "b": "6",
-            "c": "8",
-            "d": "9"
-        },
-        "jawaban_benar": "c",
-        "jawaban": "",
-        "poin": 10,
-        "kategori_soal": "DSP"
-    }
-]
+with open('soal.json', 'r', encoding='utf-8') as file:
+    kuis = json.load(file)
 
 # global variabel untuk menyimpan data user
 nama, nim, kategori_soal = "", "", ""
@@ -198,8 +69,6 @@ def main():
     for soal in kuis:
         if soal["kategori_soal"].lower() == kategori_soal.lower():
             kuis_berdasarkan_kategori.append(soal)
-    # mulai kuis
-    print(f"\nTerdapat {len(kuis_berdasarkan_kategori)} soal. Selamat Mengerjakan!\n")
     # loop soal kuis yg sudah di filter berdasarkan kategori dan kita random urutannya 
     random.shuffle(kuis_berdasarkan_kategori)
     for no_soal, soal in enumerate(kuis_berdasarkan_kategori, start=1):
@@ -236,6 +105,7 @@ while True:
         print("❗ Nama, NIM, dan Kategori Soal tidak boleh kosong!\n")
     # jika tidak kosong, jalankan fungsi main untuk memulai kuis
     else:
+        print(f"\nTerpilih Soal {kategori_soal.upper()}. Selamat Mengerjakan, {nama}!\n")
         main()
         break
     
