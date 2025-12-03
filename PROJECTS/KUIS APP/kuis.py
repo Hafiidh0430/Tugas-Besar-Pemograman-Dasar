@@ -93,6 +93,9 @@ def main():
 
 # loop input data user untuk memulai kuis
 while True:
+    print("=" * 60)
+    print(f"Selamat Datang di Kuis")
+    print("=" * 60)
     # variabel input nama, nim, dan kategori soal
     nama = input("Masukkan Nama Lengkap: ")
     nim = input("Masukkan NIM: ")
@@ -109,13 +112,34 @@ while True:
         main()
         break
     
-# loop submit untuk melihat hasil kuis
 while True:
-    # jika input bukan 'submit', ulangi loop
-    if input("Ketik 'submit' untuk melihat hasil: ").lower() != "submit":
-           print("❗ Tolong ketik 'submit untuk mengirim kuis!")
-    # jika input 'submit', hitung skor dan tampilkan hasil
-    else:
+    # input untuk submit kuis atau ganti jawaban
+    submit = input("\nMasukkan no soal untuk mengganti jawaban atau 'submit' untuk mengirim: ").strip().lower()
+    # kalau ketik 'submit' untuk mengirim
+    if submit == "submit":
         skor = hitung_skor(kuis_berdasarkan_kategori)
         tampilkan_hasil(kuis_berdasarkan_kategori, skor)
         break
+    # kalau ketik angka (nomor soal) untuk mengganti jawaban
+    elif submit.isdigit():
+        nomor = int(submit)
+        if 1 <= nomor <= len(kuis_berdasarkan_kategori):
+            soal = kuis_berdasarkan_kategori[nomor-1]  # index mulai dari 0
+            print(f"\nRevisi Jawaban - Soal {nomor}")
+            print(f"{soal['soal']}")
+            for key, value in soal['pilihan_jawaban'].items():
+                print(f"  {key}) {value}")
+            print(f"Jawaban sebelumnya: {soal['jawaban'].upper() if soal['jawaban'] else 'Belum dijawab'}")
+
+            while True:
+                jawab_baru = input("\nJawaban baru (a/b/c/d): ").lower().strip()
+                if jawab_baru in ['a', 'b', 'c', 'd']:
+                    soal["jawaban"] = jawab_baru
+                    print(f"Jawaban diubah menjadi: {jawab_baru.upper()}\n")
+                    break
+                else:
+                    print("Pilih opsi a, b, c, atau d!")
+        else:
+            print(f"Nomor soal tidak ada! Pilih 1 sampai {len(kuis_berdasarkan_kategori)}")
+    else:
+        print("Ketik nomor soal atau 'submit'!")
