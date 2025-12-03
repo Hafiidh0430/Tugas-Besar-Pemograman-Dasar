@@ -1,132 +1,263 @@
 [
   {
-    "soal": "Apa yang dimaksud dengan algoritma?",
+    "soal": "Perintah untuk menampilkan teks ke layar di Python adalah...",
     "pilihan_jawaban": {
-      "a": "Bahasa pemrograman",
-      "b": "Langkah-langkah logis untuk menyelesaikan masalah",
-      "c": "Aplikasi komputer",
-      "d": "Sistem operasi"
+      "a": "input()",
+      "b": "print()",
+      "c": "read()",
+      "d": "write()"
     },
     "jawaban_benar": "b",
     "jawaban": "",
     "poin": 10,
-    "kategori_soal": "LGA"
+    "kategori_soal": "DSP"
   },
   {
-    "soal": "Simbol flowchart yang digunakan untuk MULAI dan SELESAI adalah...",
-    "pilihan_jawaban": {
-      "a": "Persegi panjang",
-      "b": "Jajar genjang",
-      "c": "Oval",
-      "d": "Belah ketupat"
-    },
-    "jawaban_benar": "c",
-    "jawaban": "",
-    "poin": 10,
-    "kategori_soal": "LGA"
-  },
-  {
-    "soal": "Tipe data untuk menyimpan angka desimal adalah...",
+    "soal": "Tipe data untuk menyimpan teks di Python adalah...",
     "pilihan_jawaban": {
       "a": "int",
-      "b": "str",
-      "c": "float",
+      "b": "float",
+      "c": "str",
       "d": "bool"
     },
     "jawaban_benar": "c",
     "jawaban": "",
     "poin": 10,
-    "kategori_soal": "LGA"
+    "kategori_soal": "DSP"
   },
   {
-    "soal": "Operator yang digunakan untuk pembagian sisa (modulus) di Python adalah...",
+    "soal": "Variabel di Python dideklarasikan dengan tanda...",
+    "pilihan_jawaban": {
+      "a": "var",
+      "b": "let",
+      "c": "Tidak perlu kata kunci",
+      "d": "$"
+    },
+    "jawaban_benar": "c",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "DSP"
+  },
+  {
+    "soal": "Operator penjumlahan di Python adalah...",
+    "pilihan_jawaban": {
+      "a": "+",
+      "b": "-",
+      "c": "*",
+      "d": "/"
+    },
+    "jawaban_benar": "a",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "DSP"
+  },
+  {
+    "soal": "Fungsi dari keyword 'def' di Python adalah...",
+    "pilihan_jawaban": {
+      "a": "Membuat variabel",
+      "b": "Membuat fungsi",
+      "c": "Membuat kelas",
+      "d": "Mengakhiri program"
+    },
+    "jawaban_benar": "b",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "DSP"
+  },
+  {
+    "soal": "Struktur data berurutan yang bisa diubah isinya adalah...",
+    "pilihan_jawaban": {
+      "a": "tuple",
+      "b": "set",
+      "c": "list",
+      "d": "dict"
+    },
+    "jawaban_benar": "c",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "DSP"
+  },
+  {
+    "soal": "Perintah untuk mengambil input dari pengguna adalah...",
+    "pilihan_jawaban": {
+      "a": "print()",
+      "b": "input()",
+      "c": "scan()",
+      "d": "get()"
+    },
+    "jawaban_benar": "b",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "DSP"
+  },
+  {
+    "soal": "Operator pembagian bulat (floor division) di Python adalah...",
     "pilihan_jawaban": {
       "a": "/",
       "b": "//",
       "c": "%",
       "d": "**"
     },
-    "jawaban_benar": "c",
-    "jawaban": "",
-    "poin": 10,
-    "kategori_soal": "LGA"
-  },
-  {
-    "soal": "Apa fungsi dari perintah input() di Python?",
-    "pilihan_jawaban": {
-      "a": "Menampilkan output ke layar",
-      "b": "Mengambil data dari database",
-      "c": "Menerima input dari pengguna",
-      "d": "Menghapus data"
-    },
-    "jawaban_benar": "c",
-    "jawaban": "",
-    "poin": 10,
-    "kategori_soal": "LGA"
-  },
-  {
-    "soal": "Struktur percabangan di Python menggunakan kata kunci...",
-    "pilihan_jawaban": {
-      "a": "for",
-      "b": "while",
-      "c": "if",
-      "d": "def"
-    },
-    "jawaban_benar": "c",
-    "jawaban": "",
-    "poin": 10,
-    "kategori_soal": "DSP"
-  },
-  {
-    "soal": "Perulangan yang digunakan saat jumlah perulangan sudah diketahui adalah...",
-    "pilihan_jawaban": {
-      "a": "if",
-      "b": "while",
-      "c": "for",
-      "d": "def"
-    },
-    "jawaban_benar": "c",
-    "jawaban": "",
-    "poin": 10,
-    "kategori_soal": "DSP"
-  },
-  {
-    "soal": "Fungsi dari keyword def pada Python adalah untuk...",
-    "pilihan_jawaban": {
-      "a": "Mendeklarasikan variabel",
-      "b": "Mendefinisikan fungsi",
-      "c": "Membuat perulangan",
-      "d": "Menjalankan program"
-    },
     "jawaban_benar": "b",
     "jawaban": "",
     "poin": 10,
     "kategori_soal": "DSP"
   },
   {
-    "soal": "Struktur data yang dapat menyimpan banyak data dalam satu variabel di Python adalah...",
+    "soal": "Untuk menggabungkan dua string, operator yang digunakan adalah...",
     "pilihan_jawaban": {
-      "a": "int",
-      "b": "float",
-      "c": "list",
-      "d": "bool"
+      "a": "+",
+      "b": "-",
+      "c": "*",
+      "d": "/"
     },
-    "jawaban_benar": "c",
+    "jawaban_benar": "a",
     "jawaban": "",
     "poin": 10,
     "kategori_soal": "DSP"
   },
   {
-    "soal": "Apa output dari kode berikut?\nprint(2 ** 3)",
+    "soal": "Hasil dari print(3 ** 4) adalah...",
     "pilihan_jawaban": {
-      "a": "5",
-      "b": "6",
-      "c": "8",
-      "d": "9"
+      "a": "12",
+      "b": "81",
+      "c": "64",
+      "d": "7"
+    },
+    "jawaban_benar": "b",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "DSP"
+  },
+
+  {
+    "soal": "Apa yang dimaksud dengan algoritma?",
+    "pilihan_jawaban": {
+      "a": "Bahasa pemrograman",
+      "b": "Langkah-langkah logis untuk menyelesaikan masalah",
+      "c": "Program jadi",
+      "d": "Hardware komputer"
+    },
+    "jawaban_benar": "b",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "LGA"
+  },
+  {
+    "soal": "Simbol flowchart untuk proses/pengolahan data adalah...",
+    "pilihan_jawaban": {
+      "a": "Oval",
+      "b": "Persegi panjang",
+      "c": "Belah ketupat",
+      "d": "Jajar genjang"
+    },
+    "jawaban_benar": "b",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "LGA"
+  },
+  {
+    "soal": "Simbol flowchart untuk keputusan (decision) adalah...",
+    "pilihan_jawaban": {
+      "a": "Oval",
+      "b": "Persegi panjang",
+      "c": "Belah ketupat",
+      "d": "Lingkaran"
     },
     "jawaban_benar": "c",
     "jawaban": "",
     "poin": 10,
-    "kategori_soal": "DSP"
+    "kategori_soal": "LGA"
+  },
+  {
+    "soal": "Urutan yang benar dalam siklus algoritma adalah...",
+    "pilihan_jawaban": {
+      "a": "Masalah → Algoritma → Program → Eksekusi",
+      "b": "Program → Algoritma → Masalah → Eksekusi",
+      "c": "Eksekusi → Masalah → Algoritma → Program",
+      "d": "Algoritma → Eksekusi → Program → Masalah"
+    },
+    "jawaban_benar": "a",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "LGA"
+  },
+  {
+    "soal": "Pseudocode adalah...",
+    "pilihan_jawaban": {
+      "a": "Kode asli program",
+      "b": "Bahasa pemrograman resmi",
+      "c": "Deskripsi algoritma dalam bahasa mirip manusia",
+      "d": "Kode mesin"
+    },
+    "jawaban_benar": "c",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "LGA"
+  },
+  {
+    "soal": "Tiga struktur dasar algoritma adalah...",
+    "pilihan_jawaban": {
+      "a": "Sekuensial, Seleksi, Perulangan",
+      "b": "Input, Proses, Loop",
+      "c": "If, For, Print",
+      "d": "Start, Stop, End"
+    },
+    "jawaban_benar": "a",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "LGA"
+  },
+  {
+    "soal": "Flowchart dimulai dengan simbol...",
+    "pilihan_jawaban": {
+      "a": "Persegi panjang",
+      "b": "Belah ketupat",
+      "c": "Oval",
+      "d": "Panah"
+    },
+    "jawaban_benar": "c",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "LGA"
+  },
+  {
+    "soal": "Simbol input/output pada flowchart adalah...",
+    "pilihan_jawaban": {
+      "a": "Persegi panjang",
+      "b": "Jajar genjang",
+      "c": "Oval",
+      "d": "Belah ketupat"
+    },
+    "jawaban_benar": "b",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "LGA"
+  },
+  {
+    "soal": "Jika ada lebih dari dua pilihan keputusan, digunakan struktur...",
+    "pilihan_jawaban": {
+      "a": "if biasa",
+      "b": "if-else",
+      "c": "elif",
+      "d": "switch"
+    },
+    "jawaban_benar": "c",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "LGA"
+  },
+  {
+    "soal": "Perulangan yang kondisinya dicek di awal adalah...",
+    "pilihan_jawaban": {
+      "a": "for",
+      "b": "while",
+      "c": "do-while",
+      "d": "repeat-until"
+    },
+    "jawaban_benar": "b",
+    "jawaban": "",
+    "poin": 10,
+    "kategori_soal": "LGA"
   }
 ]

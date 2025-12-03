@@ -1,14 +1,14 @@
+# import library yang dibutuhkan
 from datetime import datetime
 import random
 import json
 
-# soal kuis 
+# buka soal kuis 
 with open('soal.json', 'r', encoding='utf-8') as file:
     kuis = json.load(file)
 
 # global variabel untuk menyimpan data user
 nama, nim, kategori_soal = "", "", ""
-
 # filter kuis berdasarkan kategori soal
 kuis_berdasarkan_kategori = []
 
@@ -112,6 +112,7 @@ while True:
         main()
         break
     
+# loop untuk submit kuis atau ganti jawaban
 while True:
     # input untuk submit kuis atau ganti jawaban
     submit = input("\nMasukkan no soal untuk mengganti jawaban atau 'submit' untuk mengirim: ").strip().lower()
@@ -130,7 +131,7 @@ while True:
             for key, value in soal['pilihan_jawaban'].items():
                 print(f"  {key}) {value}")
             print(f"Jawaban sebelumnya: {soal['jawaban'].upper() if soal['jawaban'] else 'Belum dijawab'}")
-
+            # loop jawaban untuk validasi input jawaban baru
             while True:
                 jawab_baru = input("\nJawaban baru (a/b/c/d): ").lower().strip()
                 if jawab_baru in ['a', 'b', 'c', 'd']:
@@ -138,8 +139,8 @@ while True:
                     print(f"Jawaban diubah menjadi: {jawab_baru.upper()}\n")
                     break
                 else:
-                    print("Pilih opsi a, b, c, atau d!")
+                    print("Pilih jawaban a, b, c, atau d!")
         else:
-            print(f"Nomor soal tidak ada! Pilih 1 sampai {len(kuis_berdasarkan_kategori)}")
+            print(f"Nomor soal tidak tersedia! Pilih 1 sampai {len(kuis_berdasarkan_kategori)}")
     else:
         print("Ketik nomor soal atau 'submit'!")
