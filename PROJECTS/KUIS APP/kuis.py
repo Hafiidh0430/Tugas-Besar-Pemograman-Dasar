@@ -155,7 +155,7 @@ while True:
     if soal_belum_terjawab:
         print(f"\n❗ Ada soal yang belum dijawab: {soal_belum_terjawab}")
         pindah_soal = soal_belum_terjawab[0] # otomatis lompat ke soal pertama yg kosong
-        print(f"Pindah ke soal {pindah_soal}...\n")
+        print(f"Pindah ke soal {pindah_soal}.\n")
 
         soal = kuis_berdasarkan_kategori[pindah_soal - 1]
 
