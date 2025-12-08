@@ -1,4 +1,5 @@
 # import library
+import os # untuk operasi file
 from datetime import datetime # untuk ambil tanggal & waktu
 import random # untuk mengacak soal
 import json # untuk membaca file JSON
@@ -58,6 +59,42 @@ def tampilkan_hasil(kuis_berdasarkan_kategori, skor_total):
 
     tampilkan_tanggal()
     print("=" * 60)
+
+# download hasil kuis 
+def simpan_hasil(kuis, skor_total):
+    downloads = os.path.join(os.path.expanduser("~"), "Downloads")
+
+    nama_file = os.path.join(downloads, f"hasil_kuis_{nama}_{nim}.txt")
+
+    total_maksimal = sum(soal["poin"] for soal in kuis)
+    persentase = (skor_total / total_maksimal) * 100
+    grades = ["F","F","F","F","E","D","C","B","A","A","A"]
+    grade = grades[min(int(persentase // 10), 10)]
+
+    with open(nama_file, "w", encoding="utf-8") as f:
+        f.write("=" * 60 + "\n")
+        f.write("HASIL KUIS\n")
+        f.write("=" * 60 + "\n\n")
+
+        for no, soal in enumerate(kuis, start=1):
+            jawaban_kamu = soal["jawaban"].upper()
+            jawaban_benar = soal["jawaban_benar"].upper()
+            benar = (jawaban_kamu == jawaban_benar)
+
+            f.write(f"{'✓' if benar else '✗'} {no}. {soal['soal']}\n")
+            f.write(f"   Jawaban kamu  : {jawaban_kamu}\n")
+            f.write(f"   Jawaban benar : {jawaban_benar}\n")
+            f.write(f"   Poin          : {soal['poin'] if benar else 0}/{soal['poin']}\n")
+            f.write("-" * 60 + "\n")
+
+        f.write(f"\nSkor Akhir   : {skor_total}/{total_maksimal}\n")
+        f.write(f"Persentase   : {persentase:.1f}% ({grade})\n")
+
+        sekarang = datetime.now()
+        f.write(f"Tanggal/Waktu: {sekarang.strftime('%d-%m-%Y %H:%M:%S')}\n")
+        f.write("=" * 60)
+
+    print(f"\n📁 File disimpan di Downloads sebagai: {nama_file}\n")
 
 # navigasi nomor-nomor soal
 def tampilkan_navigasi():
@@ -185,6 +222,10 @@ while True:
     if submit == "submit":
         skor = hitung_skor(kuis_berdasarkan_kategori)
         tampilkan_hasil(kuis_berdasarkan_kategori, skor)
+        
+        download_hasil = input("Mau simpan hasil kuis ke file? (y/n): ").lower().strip()
+        if download_hasil == 'y':
+            simpan_hasil(kuis_berdasarkan_kategori, skor)
         break
 
     # ubah jawaban soal
