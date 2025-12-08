@@ -115,7 +115,7 @@ def main():
                     print("❗ Nomor tidak valid!")
                     continue
 
-            # kalau jawabannya a/b/c/d → simpan jawaban
+            # kalau jawabannya a/b/c/d, maka simpan jawaban
             if pilihan in ['a','b','c','d']:
                 soal["jawaban"] = pilihan
                 print(f"Terpilih: {pilihan.upper()}\n")
@@ -154,7 +154,7 @@ while True:
 
     if soal_belum_terjawab:
         print(f"\n❗ Ada soal yang belum dijawab: {soal_belum_terjawab}")
-        pindah_soal = soal_belum_terjawab[0]    # otomatis lompat ke soal pertama yg kosong
+        pindah_soal = soal_belum_terjawab[0] # otomatis lompat ke soal pertama yg kosong
         print(f"Pindah ke soal {pindah_soal}...\n")
 
         soal = kuis_berdasarkan_kategori[pindah_soal - 1]
