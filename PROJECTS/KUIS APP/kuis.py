@@ -64,7 +64,7 @@ def tampilkan_hasil(kuis_berdasarkan_kategori, skor_total):
 def simpan_hasil(kuis, skor_total):
     downloads = os.path.join(os.path.expanduser("~"), "Downloads")
 
-    nama_file = os.path.join(downloads, f"hasil_kuis_{nama}_{nim}.txt")
+    nama_file = os.path.join(downloads, f"hasil_kuis_{kategori_soal}_{nama}_{nim}.txt")
 
     total_maksimal = sum(soal["poin"] for soal in kuis)
     persentase = (skor_total / total_maksimal) * 100
@@ -76,9 +76,9 @@ def simpan_hasil(kuis, skor_total):
         f.write("HASIL KUIS\n")
         f.write("=" * 60 + "\n\n")
 
-        f.write(f"Nama      : {nama}")
-        f.write(f"NIM       : {nim}")
-        f.write(f"Kategori  : {kategori_soal}")
+        f.write(f"Nama      : {nama}\n")
+        f.write(f"NIM       : {nim}\n")
+        f.write(f"Kategori  : {kategori_soal}\n")
 
         f.write("=" * 60 + "\n\n")
 
