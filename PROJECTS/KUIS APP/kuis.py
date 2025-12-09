@@ -64,7 +64,7 @@ def tampilkan_hasil(kuis_berdasarkan_kategori, skor_total):
 def simpan_hasil(kuis, skor_total):
     downloads = os.path.join(os.path.expanduser("~"), "Downloads")
 
-    nama_file = os.path.join(downloads, f"hasil_kuis_{kategori_soal}_{nama}_{nim}.txt")
+    nama_file = os.path.join(downloads, f"HASIL_KUIS_{kategori_soal.upper()}_{nama.upper()}_{nim}.txt")
 
     total_maksimal = sum(soal["poin"] for soal in kuis)
     persentase = (skor_total / total_maksimal) * 100
@@ -204,8 +204,8 @@ while True:
 
         tampilkan_navigasi()
 
-        print(f"Soal {pindah_soal}")
-        print(soal['soal'])
+        print(f"Soal {pindah_soal}/{len(kuis_berdasarkan_kategori)} [{soal['poin']} poin]")
+        print(f"{soal['soal']}")
         for key, value in soal['pilihan_jawaban'].items():
             print(f" {key}) {value}")
 
@@ -243,7 +243,7 @@ while True:
 
             soal = kuis_berdasarkan_kategori[nomor - 1]  # ambil soal yg mau direvisi
 
-            print(f"Revisi Jawaban - Soal {nomor}")
+            print(f"Soal {nomor}/{len(kuis_berdasarkan_kategori)} [{soal['poin']} poin]")
             print(soal['soal'])
             for key, value in soal['pilihan_jawaban'].items():
                 print(f" {key}) {value}")
