@@ -79,7 +79,8 @@ def simpan_hasil(kuis, skor_total):
         f.write(f"Nama      : {nama}")
         f.write(f"NIM       : {nim}")
         f.write(f"Kategori  : {kategori_soal}")
-        
+
+        f.write("=" * 60 + "\n\n")
 
         for no, soal in enumerate(kuis, start=1):
             jawaban_kamu = soal["jawaban"].upper()
